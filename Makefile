@@ -29,7 +29,6 @@ init:
 	docker-compose exec app cp .env.example .env
 	docker-compose exec app php artisan key:generate
 	docker-compose exec app php artisan storage:link
-	@make fresh
 init-yarn:
 	docker-compose exec web yarn install
 	docker-compose exec web yarn dev
@@ -39,7 +38,6 @@ create-project:
 	@make laravel-install
 	docker-compose exec app php artisan key:generate
 	docker-compose exec app php artisan storage:link
-	@make fresh
 install-recommend-packages:
 	docker-compose exec app composer require doctrine/dbal
 	docker-compose exec app composer require --dev barryvdh/laravel-ide-helper
