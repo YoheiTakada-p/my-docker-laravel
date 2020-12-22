@@ -13,12 +13,12 @@ docker:19.03.13
 - Base image
   - mysql:8.0
 
-https://github.com/ucan-lab/docker-laravel 参考  
+https://github.com/ucan-lab/docker-laravel 参考
 
-修正  
-・docker-compose.ymlのDB関係の環境変数をphpunitで別のDBを使用するため変更  
-・EC2でphp/DockerfileのENVのlocale関係の位置をlocale-genの後に移動しエラーが出ないように変更  
-・Makefile追加  
+修正
+・docker-compose.ymlのDB関係の環境変数をphpunitで別のDBを使用するため変更
+・EC2でphp/DockerfileのENVのlocale関係の位置をlocale-genの後に移動しエラーが出ないように変更
+・Makefile追加
 
 a. ローカル環境の場合
 ```bash
@@ -26,7 +26,8 @@ $ git clone <http/ssh>
 $ cd docker-laravel
 $ make create-project # a. 最新版で始める場合
 $ make create-project-6.x # b1. laravel6.xで始める場合
-$ make create-project-react # b2. laravel6.xにreactを入れて始める場合
+$ make create-project-vue # b2-1. laravel6.xにvueを入れて始める場合
+$ make create-project-react # b2-2. laravel6.xにreactを入れて始める場合
 $ make init # c1. 既存のプロジェクトから始める場合
 $ make init-yarn # c2. npm関係がある場合
 ```
@@ -43,7 +44,7 @@ $ make init-yarn
 $ sudo chmod -R 777 backend/storage/ #権限付与
 $ sudo chmod -R 777 backend/bootstrap/cache/ #権限付与
 ```
-Tailwind  
+Tailwind
 https://tailwindcss.com/docs/guides/laravel
 ```bash
 $ yarn add -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
@@ -67,7 +68,7 @@ const mix = require('laravel-mix');
 
 $ yarn dev
 ```
-jetstream  
+jetstream
 ```bash
 $ composer require laravel/jetstream
 $ php artisan jetstream:install livewire
@@ -89,15 +90,15 @@ database.php
 ]
 phpunit.xmlのDB_CONNECTIONをtestingに変更
 ```
-注意  
-ローカルで $ docker-compose up でマウントできなかった時は再起動しよう  
-devでModule build failedエラー出たらもう一度devしよう  
-env設定を忘れずにしよう  
-deploy.ymlは遅すぎるコンパイル対策  
+注意
+ローカルで $ docker-compose up でマウントできなかった時は再起動しよう
+devでModule build failedエラー出たらもう一度devしよう
+env設定を忘れずにしよう
+deploy.ymlは遅すぎるコンパイル対策
 
-以下参考  
-Module build failedエラー  
-https://github.com/babel/babel/issues/8599  
+以下参考
+Module build failedエラー
+https://github.com/babel/babel/issues/8599
 
-PHPUnitテスト用にSQLiteをDBに設定する場合  
-https://qiita.com/sola-msr/items/80b0c0e0edb67a35d282  
+PHPUnitテスト用にSQLiteをDBに設定する場合
+https://qiita.com/sola-msr/items/80b0c0e0edb67a35d282
