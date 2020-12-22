@@ -25,6 +25,8 @@ a. ローカル環境の場合
 $ git clone <http/ssh>
 $ cd docker-laravel
 $ make create-project # a. 最新版で始める場合
+.envファイルにDB関係を追記する
+$ make fresh
 $ make create-project-6.x # b1. laravel6.xで始める場合
 $ make create-project-vue # b2-1. laravel6.xにvueを入れて始める場合
 $ make create-project-react # b2-2. laravel6.xにreactを入れて始める場合
@@ -40,6 +42,8 @@ $ sudo mv <http/ssh> backend
 $ sudo lsof -i :80 #確認
 $ sudo apachectl stop　#apacheを止めよう
 $ make init
+.envファイルにDB関係を追記する
+$ make fresh
 $ make init-yarn
 $ sudo chmod -R 777 backend/storage/ #権限付与
 $ sudo chmod -R 777 backend/bootstrap/cache/ #権限付与
