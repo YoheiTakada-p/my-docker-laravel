@@ -16,7 +16,7 @@ docker:19.03.13
 https://github.com/ucan-lab/docker-laravel 参考  
 
 修正  
-・docker-compose.ymlのDB関係の環境変数をphpunitで別のDBを使用するため変更
+・docker-compose.ymlのDB関係の環境変数をphpunitで別のDBを使用するため変更  
 ・EC2でphp/DockerfileのENVのlocale関係の位置をlocale-genの後に移動しエラーが出ないように変更  
 ・Makefile追加  
 
@@ -76,7 +76,7 @@ $ yarn install
 $ yarn dev #すんごい時間かかる
 ```
 phpunit
-```
+```bash
 database.php
 'connections' => [
 
@@ -88,7 +88,7 @@ database.php
     ],
 ]
 phpunit.xmlのDB_CONNECTIONをtestingに変更
-```bash
+```
 注意  
 ローカルで $ docker-compose up でマウントできなかった時は再起動しよう  
 devでModule build failedエラー出たらもう一度devしよう  
